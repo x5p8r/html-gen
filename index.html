@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>HTML Generator • Developer Templates</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <header class="topbar">
+        <div class="avatar-wrap">
+            <label class="avatar-input" title="Upload avatar">
+                <input id="avatarFile" type="file" accept="image/*" />
+                <span class="avatar-circle" id="avatarPreview" aria-hidden="true"></span>
+            </label>
+        </div>
+        <nav class="nav">
+            <div class="brand">HTML Generator</div>
+            <div class="nav-actions">
+                <button class="btn ghost" id="presetBtn" title="Presets">Presets ▾</button>
+                <button class="btn primary" id="generateBtn">Generate ▸</button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="layout">
+        <section class="panel controls" aria-labelledby="controlsTitle">
+            <h2 id="controlsTitle">Customize Template</h2>
+
+            <div class="form-grid">
+                <label>Website Title
+                    <input id="siteTitle" placeholder="My Project" />
+                </label>
+                <label>Primary Color
+                    <input id="primaryColor" type="color" value="#b08b60" />
+                </label>
+                <label>Font Style
+                    <select id="fontStyle">
+                        <option value="Inter">Inter (Sans)</option>
+                        <option value="Merriweather">Merriweather (Serif)</option>
+                        <option value="IBM+Plex+Mono">IBM Plex Mono</option>
+                    </select>
+                </label>
+                <label>Layout
+                    <select id="layoutStyle">
+                        <option value="centered">Centered Hero</option>
+                        <option value="split">Split (Text + Image)</option>
+                    </select>
+                </label>
+                <label>Mode
+                    <select id="modeToggle">
+                        <option value="dark">Dark</option>
+                        <option value="light">Light</option>
+                    </select>
+                </label>
+            </div>
+
+            <label class="full">Hero Text
+                <input id="heroText" placeholder="Build beautiful sites in minutes." />
+            </label>
+            <label class="full">Button Text
+                <input id="btnText" placeholder="Get Started" />
+            </label>
+
+            <div class="row">
+                <button class="btn outline" id="previewBtn">Live Preview</button>
+                <button class="btn" id="downloadAll">Download ZIP</button>
+            </div>
+
+            <div class="options">
+                <button class="btn small" data-preset="minimal">Minimal</button>
+                <button class="btn small" data-preset="blog">Blog</button>
+                <button class="btn small" data-preset="landing">Landing</button>
+            </div>
+
+            <div class="extras">
+                <button class="link" id="copyHTML">Copy HTML</button>
+                <button class="link" id="copyCSS">Copy CSS</button>
+                <button class="link" id="copyJS">Copy JS</button>
+            </div>
+
+        </section>
+
+        <aside class="panel preview" aria-labelledby="previewTitle">
+            <h2 id="previewTitle">Live Preview</h2>
+            <div class="preview-toolbar">
+                <div class="small-muted">Preview window</div>
+                <div class="preview-actions">
+                    <button class="btn tiny" id="downloadHTML">Download HTML</button>
+                    <button class="btn tiny" id="downloadCSS">Download CSS</button>
+                    <button class="btn tiny" id="downloadJS">Download JS</button>
+                </div>
+            </div>
+
+            <div class="preview-frame" id="previewFrameWrap">
+                <iframe id="previewFrame" sandbox="allow-scripts allow-forms"></iframe>
+            </div>
+        </aside>
+    </main>
+
+    <section class="features">
+        <div class="feature">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg>
+            <h3>Fast Templates</h3>
+            <p>Clean, minimal scaffolding tuned for developers.</p>
+        </div>
+        <div class="feature">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18m9-9H3"/></svg>
+            <h3>Customizable</h3>
+            <p>Change colors, fonts, layout and hero content.</p>
+        </div>
+        <div class="feature">
+            <svg class="icon" viewBox="0 0 24 24"><path d="M5 12h14M12 5v14"/></svg>
+            <h3>Downloadable</h3>
+            <p>Download single files or a packaged ZIP.</p>
+        </div>
+    </section>
+
+    <footer class="site-foot">
+        <div>© <span id="year"></span> HTML Generator — Built for developers</div>
+        <div class="foot-actions">
+            <small><a href="https://github.com/html-generator" target="_blank" rel="noopener noreferrer">View on GitHub</a></small>
+            <small>dev </small>
+            <small><a href="https://www.instagram.com/salman__emin" target="_blank" rel="noopener noreferrer">Salman Emin</a></small>
+        </div>
+    </footer>
+
+    <div class="loader" id="loader" hidden>
+        <div class="spinner"></div>
+        <div class="loader-text">Generating files…</div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
